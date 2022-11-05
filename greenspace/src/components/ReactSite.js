@@ -6,12 +6,18 @@ import {
 import Chatbot from './Chatbot'
 import Clinics from './Clinics/Clinics'
 import Providers from './Providers/Providers'
-import Resources from './Resources/Resources'
-import GoodVibes from './Vibes/GoodVibes'
+import Donate from './Donate/Donate'
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+import '../styling/reactsite.css'
+
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
 
 function ReactSite() {
+
     return(
-        <div>
+        <div className='containerReactsite'>
             <Router>
                     <Switch>
                         <Route path='/' exact> 
@@ -23,11 +29,8 @@ function ReactSite() {
                         <Route path='/providers' exact>
                             <Providers/>
                         </Route>
-                        <Route path='/resources' exact>
-                            <Resources/>
-                        </Route>   
-                        <Route path='/vibes' exact>
-                            <GoodVibes/>
+                        <Route path='/donate' exact>
+                            <Donate/>
                         </Route>                
                     </Switch>
             </Router>

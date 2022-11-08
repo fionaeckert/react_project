@@ -15,9 +15,9 @@ function NavBar() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/"> greta | </Nav.Link>
-            <Nav.Link href="/clinics"> clinics | </Nav.Link>
-            <Nav.Link href="/providers"> providers |</Nav.Link>
-            <Nav.Link href="/donate">donate ♡ </Nav.Link>
+            <Nav.Link href="/providers"> providers | </Nav.Link>
+            <Nav.Link href="/newsletter"> get involved |</Nav.Link>
+            <Nav.Link href="/payment">donate ♡ </Nav.Link>
           </Nav>
           </Navbar.Collapse>
           </div>

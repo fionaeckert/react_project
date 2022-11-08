@@ -57,9 +57,9 @@ const steps = [
     {
         id: 'options-message',
         options: [
-          { value: 'clinics', label: 'Chicago Clinics', trigger:'clinics'},
-          { value: 'providers', label: 'Local Providers', trigger:'providers'},
-          { value: 'resources', label: 'Resources', trigger:'resources-message'}
+          { value: 'providers', label: 'Chicago Providers', trigger:'providers'},
+          { value: 'newsletter', label: 'Get Involved', trigger:'newsletter'},
+          { value: 'resources', label: 'Mental Health Resources', trigger:'resources-message'}
         ],
     },
     {
@@ -114,26 +114,26 @@ const steps = [
         message: 'Turning Point Living Room: 847-933-9202, Josselyn Center Living Room: 847-441-5600, Welcoming Center Lutheran Social Services: 773-561-5809',
     },
     {
-        id:'clinics',
-        component: (
-            <div>Please navigate to the following link:
-                <br />
-                <Router>
-                    <Switch>
-                        <NavLink to='/clinics' target="_blank">Chicago-Area Clinics</NavLink>
-                    </Switch>
-                </Router>
-            </div>
-        )
-    },
-    {
         id:'providers',
         component: (
             <div>Please navigate to the following link:
                 <br />
                 <Router>
                     <Switch>
-                        <NavLink to='/providers' target="_blank">Providers</NavLink>
+                        <NavLink to='/providers' target="_blank">Chicago-Area Providers</NavLink>
+                    </Switch>
+                </Router>
+            </div>
+        )
+    },
+    {
+        id:'newsletter',
+        component: (
+            <div>Please navigate to the following link:
+                <br />
+                <Router>
+                    <Switch>
+                        <NavLink to='/newsletter' target="_blank">Sign up for our newsletter!</NavLink>
                     </Switch>
                 </Router>
             </div>

@@ -1,14 +1,14 @@
 const reducer = (state, action) => {
     if (state === undefined) {
         state = {
-            clinics: []
+            users: []
         }
     }
     switch (action.type) {
-        case "GET_CLINICS":
+        case "ADD_USER":
             return {
                 ...state,
-                clinics: state.clinics.concat(action.data)
+                users: state.users.concat(action.data)
             }
         default:
             return state

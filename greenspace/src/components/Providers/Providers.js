@@ -1,33 +1,50 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import React from 'react'
+import React, {useState} from 'react'
 import Card from 'react-bootstrap/Card'
-import {useDispatch, useSelector} from 'react-redux'
-import {getProviders} from '../../actions/providerActions'
 import '../../styling/providers.css'
 
 
 function Providers() {
-  const dispatch = useDispatch();
-  const providers = useSelector(state => state.providers)
+
+  const [providers, setProviders] = useState([])
   
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let response = await fetch('')
+    let response = await fetch('https://data.cityofchicago.org/resource/g7ng-5vwp.json')
     let data = await response.json();
-    dispatch(getProviders.data)
+    console.log(data)
+    console.log(data[0].site_name)
+    
+    for(let i=0;i<=data.length; i++) {
+      let newProvider = {
+        'Site name': data[i].site_name,
+        'Clinic type': data.clinic_type,
+        'Hours of operation': data.hours_of_operation,
+        'Street address': data.street_address,
+        'Zip': data.zip,
+        'State': data.state
+    }
+      setProviders(data => ({
+        ...providers,
+        ...newProvider
+      }))
+    }
+    
+    // setProviders(data)
+    console.log(providers)
   }
 
   
   return (
     <div className='container'>
       <div className='headerContainer'>
-      <h4 className="header">Specialized providers for what you need.</h4>
+        <h4 className="header">Find local clinics and providers that meet your needs, without sacrificing your comfort.</h4>
      </div>
     <div className='formContainer'>
       <Form className="form" onSubmit={handleSubmit}>
         <Form.Group className="mb-3">
-          <Form.Label>Select the specialty of provider you're looking for and hit "Submit" to see your personalized options:</Form.Label>
+          <Form.Label>Select the specialty of the clinic you're looking for and hit "Submit" to see your personalized options:</Form.Label>
           <Form.Select>
             <option>All</option>
             <option>Mental Health</option>
@@ -41,7 +58,7 @@ function Providers() {
         </Button>
       </Form>
     </div>
-    <div className='cardContainer'>
+    {/* <div className='cardContainer'>
       <Card style={{ width: '18rem' }}>
         <Card.Body>
           <Card.Title>Card Title</Card.Title>
@@ -71,27 +88,27 @@ function Providers() {
         </Card.Text>
         <Button variant="primary">Go somewhere</Button>
       </Card.Body>
-    </Card>
-    
-  </div>
-    {/* <ul>
-      {clinics.map(clinicsObj => {
-        return <li key={clinics.site_name}>
-          {clinics.site_name}
-          <br />
-          {clinics.clinic_type}
-          <br />
-          {clinics.hours_of_operation}
-          <br />
-          {clinics.street_address}
-          <br />
-          {clinics.zip}
-          <br />
-          {clinics.state}
-        </li>
-      })}
-    </ul> */}
+    </Card> */}
+{/*     
+      <ul>
+        {providers.map(providersObj => {
+          return <li key={providers.site_name}>
+            {providers.site_name}
+            <br />
+            {providers.clinic_type}
+            <br />
+            {providers.hours_of_operation}
+            <br />
+            {providers.street_address}
+            <br />
+            {providers.zip}
+            <br />
+            {providers.state}
+          </li>
+        })}
+      </ul> */}
     </div>
+
   );
 }
 

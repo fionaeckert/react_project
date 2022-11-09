@@ -38,7 +38,7 @@ export default function PaymentForm() {
     if(!error){
         try{
             const {id} = paymentMethod
-            const response = await axios.post("https://greenspace-mentalhealth.herokuapp.com/", {
+            const response = await axios.post("http://localhost3001/payment", {
                 amount: 1000,
                 id
             })
@@ -60,7 +60,7 @@ export default function PaymentForm() {
     <>
     <div id="entireFormContainer">
     <div id="headerContainer">
-        <h4 id="header">Thank you for considering a donation to Greenspace.</h4>
+        <h4 id="header">Thank you for considering a $10 donation to Greenspace.</h4>
         <p id="text">All proceeds this month will support <a target="_blank" href="http://www.nostigmas.org/">No Stigmas</a>, an organization devoted to shifting the societal perspctive on mental health.</p>
         
     </div>

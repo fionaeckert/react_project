@@ -16,6 +16,7 @@ function Newsletter() {
   const allUsers = useSelector(state => state.users)
 
   const handleSubmit = (e) => {
+    e.preventDefault()
     dispatch(addUser(first_name, last_name, email, interests, availability))
     alert('Got it! Thanks!')
   }  

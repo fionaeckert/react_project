@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Greenspace
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Greenspace] () connects Chicago residents to mental health clinics and resources. The application aims to lessen the barriers to accessing quality mental healthcare, all while lifting up the providers on the front-line.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Tech Stack
 
-### `npm start`
+**Client:** React, Redux
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Server:** Node, Express, Stripe
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Deployment:** Netlify
 
-### `npm test`
+**Design:** Boostrap, CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**API:** City of Chicago Data Portal
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Full-scale chatbot through which users can interact, receive resources, and connect with providers.
+- Local mental health clinic information rendered through City of Chicago Data API call.
+- Redux-managed sign up page, through which users can subscribe to updates, events, and volunteer opportunities with Greenspace.
+- Stripe-operated donation hub where visitor can contribute funds to the organization of the month.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Screenshots
+![Landing Page](./src/Screenshots/HomePage.png)
+![Chatbot 1](./src/Screenshots/ChatBot1.png)
+![Chatbot 2](./src/Screenshots/ChatBot2.png)
+![Providers 1](./src/Screenshots/Providers1.png)
+![Providers 2](./src/Screenshots/Providers2.png)
+![Get Involved](./src/Screenshots/GetInvolved.png)
+![Donate](./src/Screenshots/Donate.png)
 
-### `npm run eject`
+## Developer Team
+- [Fiona Eckert] https://www.linkedin.com/in/fiona-eckert/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Github Repo
+- [Greenspace repo] (https://github.com/fionaeckert/react_project)

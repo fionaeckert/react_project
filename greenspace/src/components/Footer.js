@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../chicago.jpeg'
+import logo from '../styling/chicago.jpeg'
 import '../styling/footer.css'
 
 

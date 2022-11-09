@@ -1,6 +1,6 @@
 @font-face{
     font-family:Happy-Times;
-    src:url('../happy-times-NG_regular_master.otf')
+    src:url('./happy-times-NG_regular_master.otf')
 }
 
 .container{

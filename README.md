@@ -24,13 +24,13 @@ Greenspace connects Chicago residents to mental health clinics and resources. Th
 - Stripe-operated donation hub where visitor can contribute funds to the organization of the month.
 
 ## Screenshots
-![Landing Page](./src/Screenshots/HomePage.png)
-![Chatbot 1](./src/Screenshots/ChatBot1.png)
-![Chatbot 2](./src/Screenshots/ChatBot2.png)
-![Providers 1](./src/Screenshots/Providers1.png)
-![Providers 2](./src/Screenshots/Providers2.png)
-![Get Involved](./src/Screenshots/GetInvolved.png)
-![Donate](./src/Screenshots/Donate.png)
+![Landing Page](./Screenshots/HomePage.png)
+![Chatbot 1](./Screenshots/ChatBot1.png)
+![Chatbot 2](./Screenshots/ChatBot2.png)
+![Providers 1](./Screenshots/Providers1.png)
+![Providers 2](./Screenshots/Providers2.png)
+![Get Involved](./Screenshots/GetInvolved.png)
+![Donate](./Screenshots/Donate.png)
 
 ## Developer Team
 - [Fiona Eckert](https://www.linkedin.com/in/fiona-eckert/)

@@ -38,7 +38,7 @@ export default function PaymentForm() {
     if(!error){
         try{
             const {id} = paymentMethod
-            const response = await axios.post("http://localhost3001/payment", {
+            const response = await axios.post("https://greenspace-mentalhealth.herokuapp.com/", {
                 amount: 1000,
                 id
             })

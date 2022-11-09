@@ -8,13 +8,13 @@ import '../styling/chatbot.css'
 const theme = {
     background: '#f5f8fb',
   fontFamily: '',
-  headerBgColor: '#96BB7C',
-  headerFontColor: '#fff',
+  headerBgColor: '#eeecd3',
+  headerFontColor: 's393d2d',
   headerFontSize: '15px',
-  botBubbleColor: '#96BB7C',
-  botFontColor: '#fff',
+  botBubbleColor: '#eeecd3',
+  botFontColor: '#s393d2d',
   userBubbleColor: '#fff',
-  userFontColor: '#4a4a4a',
+  userFontColor: '#s393d2d',
 };
 
 const steps = [

@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import Card from 'react-bootstrap/Card'
 import '../../styling/providers.css'
 
@@ -8,106 +7,193 @@ import '../../styling/providers.css'
 function Providers() {
 
   const [providers, setProviders] = useState([])
+
+  // const [test, setTest] = useState('test')
+
+  // let listProviders = []
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   let response = await fetch('https://data.cityofchicago.org/resource/g7ng-5vwp.json')
+  //   .then((response) => {
+  //     return response.json()
+  //   })
+  //   .then((data) =>{
+  //     // for(let i=0;i<=data.length; i++){
+  //     //         let newProvider = {
+  //     //               'Site name': data.providers[i].provider.name,
+  //     //           }
+     
+  //     // console.log(data.providers)
+  //     console.log(data)
+  //     listProviders.push(data)
+  //     setProviders(listProviders)
+  //     setProviders(listProviders => ({
+  //               ...providers,
+  //               ...listProviders
+  //             }))
+  //   })
+  // }
+  // }})}
+
+  useEffect(() => {
+    getAPI()
+}, [])  
   
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    let response = await fetch('https://data.cityofchicago.org/resource/g7ng-5vwp.json')
-    let data = await response.json();
-    console.log(data)
-    console.log(data[0].site_name)
-    
-    for(let i=0;i<=data.length; i++) {
-      let newProvider = {
-        'Site name': data[i].site_name,
-        'Clinic type': data.clinic_type,
-        'Hours of operation': data.hours_of_operation,
-        'Street address': data.street_address,
-        'Zip': data.zip,
-        'State': data.state
-    }
-      setProviders(data => ({
-        ...providers,
-        ...newProvider
-      }))
-    }
-    
-    // setProviders(data)
-    console.log(providers)
+  const getAPI = () => {
+    fetch('https://data.cityofchicago.org/resource/g7ng-5vwp.json')
+    .then(res => res.json())
+    .then(providers => {
+      setProviders(providers)
+      // console.log(providers)
+    })
   }
+
+  
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   let response = await fetch('')
+  //   .then((response) =>{
+  //     return response.json()
+  //   })
+  //    .then((data) => {
+  //     for(let i=0;i<=data.length; i++){
+  //       let newProvider = {
+  //             'Site name': data[i].site_name,
+  //             'Clinic type': data[i].clinic_type,
+  //             'Hours of operation': data[i].hours_of_operation,
+  //             'Street address': data[i].street_address,
+  //             'Zip': data[i].zip,
+  //             'State': data[i].state
+  //         }
+  //         newProviderList.push(newProvider)
+  //         // console.log(newProviderList)
+          
+  //         // console.log(newProviderList)
+  //       }
+  //       setProviders(providers => ({
+  //         ...providers,
+  //         ...newProviderList
+  //       }))
+  //       console.log(providers)
+
+      //  console.log(newProviderList)
+ 
+    // console.log(data)
+    // console.log(data[4].site_name)
+    
+    // for(let i=0;i<=data.length; i++) {
+    //   let newProvider = {
+    //     'Site name': data[i].site_name,
+    //     'Clinic type': data[i].clinic_type,
+    //     'Hours of operation': data[i].hours_of_operation,
+    //     'Street address': data[i].street_address,
+    //     'Zip': data[i].zip,
+    //     'State': data[i].state
+    // }
+    //   setProviders(data => ({
+    //     ...providers,
+    //     ...newProvider
+    //   }))
+    //   console.log(providers)
+    // }
+    
+    // // setProviders(data)
+    // console.log(providers)
 
   
   return (
     <div className='container'>
       <div className='headerContainer'>
-        <h4 className="header">Find local clinics and providers that meet your needs, without sacrificing your comfort.</h4>
-     </div>
-    <div className='formContainer'>
-      <Form className="form" onSubmit={handleSubmit}>
-        <Form.Group className="mb-3">
-          <Form.Label>Select the specialty of the clinic you're looking for and hit "Submit" to see your personalized options:</Form.Label>
-          <Form.Select>
-            <option>All</option>
-            <option>Mental Health</option>
-            <option>Women, Children, and Infants</option>
-            <option>Public Health</option>
-            <option>STIs</option>
-          </Form.Select>
-        </Form.Group>
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Form>
+        <h4 className="header">Find local clinics that meet your needs, without sacrificing your comfort.</h4>
     </div>
-    {/* <div className='cardContainer'>
-      <Card style={{ width: '18rem' }}>
+    <div className='cardContainer'>
+      <Card style={{ width: '18rem' }} className="cards">
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <Card.Title><a target="_blank" href="https://cookcountyhealth.org/locations/englewood-health-center/">{providers[0].site_name}</a></Card.Title>
+          <Card.Text className='cardText'>
+            Hours of operation:
+            <br />
+          {providers[0].hours_of_operation}
+          <br />
+          Address:
+          <br />
+          {providers[0].street_address}
+          <br />
+          {providers[0].zip}, <nbsp />
+          {providers[0].state}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
-      <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} className="cards">
         <Card.Body>
-          <Card.Title>Card Title</Card.Title>
-          <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <Card.Title><a target="_blank" href="http://cdph.purplebinder.com/locations/city-of-chicago/greater-grand-slash-mid-south-mental-health-center">{providers[1].site_name}</a></Card.Title>
+          <Card.Text className='cardText'>
+            Hours of Operation:
+            <br />
+          {providers[1].hours_of_operation}
+          <br />
+          Address:
+          <br />
+          {providers[1].street_address}
+          <br />
+          {providers[1].zip}, <nbsp />
+          {providers[1].state}
           </Card.Text>
-          <Button variant="primary">Go somewhere</Button>
         </Card.Body>
       </Card>
-      <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card> */}
-{/*     
-      <ul>
-        {providers.map(providersObj => {
-          return <li key={providers.site_name}>
-            {providers.site_name}
+      <Card style={{ width: '18rem' }} className="cards">
+        <Card.Body>
+          <Card.Title><a target="_blank" href="http://cdph.purplebinder.com/locations/city-of-chicago/greater-lawn-mental-health-center">{providers[2].site_name}</a></Card.Title>
+          <Card.Text className='cardText'>
+            Hours of Operation:
             <br />
-            {providers.clinic_type}
+          {providers[2].hours_of_operation}
+          <br />
+          Address:
+          <br />
+          {providers[2].street_address}
+          <br />
+          {providers[2].zip}, <nbsp />
+          {providers[2].state}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: '18rem' }} className="cards">
+        <Card.Body>
+          <Card.Title><a target="_blank" href="https://lawndale.org/">{providers[3].site_name}</a></Card.Title>
+          <Card.Text className='cardText'>
+            Hours of Operation:
             <br />
-            {providers.hours_of_operation}
+          {providers[3].hours_of_operation}
+          <br />
+          Address:
+          <br />
+          {providers[3].street_address}
+          <br />
+          {providers[3].zip}, <nbsp />
+          {providers[3].state}
+          </Card.Text>
+        </Card.Body>
+      </Card>
+      <Card style={{ width: '18rem' }} className="cards">
+        <Card.Body>
+          <Card.Title><a target="_blank" href="http://cdph.purplebinder.com/locations/city-of-chicago/north-river-mental-health-center">{providers[4].site_name}</a></Card.Title>
+          <Card.Text className='cardText'>
+            Hours of Operation:
             <br />
-            {providers.street_address}
-            <br />
-            {providers.zip}
-            <br />
-            {providers.state}
-          </li>
-        })}
-      </ul> */}
+          {providers[4].hours_of_operation}
+          <br />
+          Address:
+          <br />
+          {providers[4].street_address}
+          <br />
+          {providers[4].zip}, <nbsp />
+          {providers[4].state}
+          </Card.Text>
+        </Card.Body>
+      </Card>
     </div>
+  </div>
 
   );
 }

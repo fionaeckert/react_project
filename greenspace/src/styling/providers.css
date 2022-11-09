@@ -34,8 +34,15 @@
 
 .cardContainer{
     display: flex;
-    flex-direction:row;
-    flex-wrap:inherit;
-    justify-content: space-evenly;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
     margin-bottom: 20px;
+}
+
+.cards{
+    margin:25px
+}
+
+.cardText{
+    font-size: 18px;
 }

@@ -26,10 +26,15 @@
 .Form {
 	padding: 0;
 	border-style: none;
-	background-color:  rgb(104, 155, 104);
+	background-color: #eeecd3;
+	opacity: 80%;
 	will-change: opacity, transform;
-	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgb(104, 155, 104);
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08);
 	border-radius: 10px;
+}
+
+.Form:hover{
+	opacity: 100%
 }
 
 .FormRow {
@@ -57,17 +62,23 @@
 	height: 40px;
 	background-color: E7E6F7;
 	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 E7E6F7;
-	color: black;
+	color: "#s393d2d";
 	font-weight: 600;
+	font-size: 20px;
 	cursor: pointer;
 	transition: all 100ms ease-in-out;
 	will-change: transform, background-color, box-shadow;
 	border: none;
-    border-radius: 10px;;
+    border-radius: 10px;
+	opacity: 80%;
+}
+
+#button:hover{
+	opacity: 100%;
 }
 
 button:active {
-	background-color: #d782d9;
+	background-color: #f8e8bf;
 	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #e298d8;
 	transform: scale(0.99);
 }

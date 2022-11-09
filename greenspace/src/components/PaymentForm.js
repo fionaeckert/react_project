@@ -7,18 +7,18 @@ const CARD_OPTIONS = {
 	iconStyle: "solid",
 	style: {
 		base: {
-			iconColor: "#fff",
-			color: "#fff",
+			iconColor: "#s393d2d",
+			color: "#s393d2d",
 			fontWeight: 500,
 			fontFamily: "Roboto, Open Sans, Segoe UI, sans-serif",
-			fontSize: "16px",
+			fontSize: "20px",
 			fontSmoothing: "antialiased",
-			":-webkit-autofill": { color: "#fff" },
-			"::placeholder": { color: "#fff" },
+			":-webkit-autofill": { color: "#s393d2d" },
+			"::placeholder": { color: "#s393d2d" },
 		},
 		invalid: {
-			iconColor: "#fff",
-			color: "#fff"
+			iconColor: "#s393d2d",
+			color: "#s393d2d"
 		}
 	}
 }
@@ -61,7 +61,8 @@ export default function PaymentForm() {
     <div id="entireFormContainer">
     <div id="headerContainer">
         <h4 id="header">Thank you for considering a donation to Greenspace.</h4>
-        <p id="text">All proceeds this month will support <a href="nostigmas.org">No Stigmas</a>, an organization devoted to shifting the societal perspctive on mental health.</p>
+        <p id="text">All proceeds this month will support <a target="_blank" href="http://www.nostigmas.org/">No Stigmas</a>, an organization devoted to shifting the societal perspctive on mental health.</p>
+        
     </div>
     {!success?
     <div id="paymentFormContainer">

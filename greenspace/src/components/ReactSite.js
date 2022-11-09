@@ -28,7 +28,7 @@ function ReactSite() {
                         </Route>
                         <Route path='/payment' exact>
                             <StripeContainer/>
-                        </Route>                
+                        </Route>             
                     </Switch>
             </Router>
         </div>

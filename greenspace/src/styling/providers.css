@@ -40,9 +40,21 @@
 }
 
 .cards{
-    margin:25px
+    margin:25px;
+    background-color: #eeecd3 !important;
 }
 
 .cardText{
     font-size: 18px;
+}
+
+.button{
+    background-color: #eeecd3 !important;
+    color: #5A5A5A !important;
+    font-size: 18px!important;
+    border: #eeecd3 !important;
+}
+
+.button:hover{
+    opacity: 100% !important;
 }
